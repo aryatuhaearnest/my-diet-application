@@ -20,10 +20,10 @@ public class Activity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
 
-        name=(EditText)findViewById(R.id.editText2);
-        email=(EditText)findViewById(R.id.editText4);
-        password=(EditText)findViewById(R.id.editText5);
-        SignUp=(Button)findViewById(R.id.button4);
+        name = (EditText) findViewById(R.id.editText2);
+        email = (EditText) findViewById(R.id.editText4);
+        password = (EditText) findViewById(R.id.editText5);
+        SignUp = (Button) findViewById(R.id.button4);
 
         SignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,28 +33,30 @@ public class Activity2 extends AppCompatActivity {
         });
     }
 
-    boolean isEmpty(EditText text){
-        CharSequence str=text.getText().toString();
+    boolean isEmpty(EditText text) {
+        CharSequence str = text.getText().toString();
         return TextUtils.isEmpty(str);
 
     }
 
-    boolean isEmail(EditText text){
-        CharSequence email=text.getText().toString();
+    boolean isEmail(EditText text) {
+        CharSequence email = text.getText().toString();
         return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches());
     }
-    void checkDataEntered(){
-        if (isEmpty(name)){
-            Toast t=Toast.makeText(this,"You must enter name",Toast.LENGTH_SHORT);
+
+    void checkDataEntered() {
+        if (isEmpty(name)) {
+            Toast t = Toast.makeText(this, "You must enter name", Toast.LENGTH_SHORT);
             t.show();
         }
-       /* if (isEmail(email)=false) {
+        if (TextUtils.isEmpty(email.getText())) {
             email.setError("Enter valid email");
-        }*/
-        if (isEmpty(password)){
-            password.setError("password is required");
+
+            if (isEmpty(password)) {
+                password.setError("password is required");
+            }
         }
-    }
 
     }
+}
 
