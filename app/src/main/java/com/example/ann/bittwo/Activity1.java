@@ -10,11 +10,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Activity1 extends AppCompatActivity {
     private EditText email;
     private EditText password;
     private Button login;
-   // private FirebaseAuth mA;
+    private FirebaseAuth mA;
 
     @Override
 
