@@ -1,6 +1,7 @@
 package com.example.ann.bittwo;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -8,11 +9,10 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Activity1 extends AppCompatActivity {
+public class login extends AppCompatActivity {
     private EditText email;
     private EditText password;
     private Button login;
@@ -23,7 +23,8 @@ public class Activity1 extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_1);
+        setContentView(R.layout.login);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         email=(EditText)findViewById(R.id.editText);
         password=(EditText)findViewById(R.id.editText3);
@@ -34,7 +35,7 @@ public class Activity1 extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myintent =new Intent(Activity1.this,Activity3.class);
+                Intent myintent =new Intent(com.example.ann.bittwo.login.this,nutrition.class);
                 startActivity(myintent);
             }
         });
@@ -63,7 +64,7 @@ public class Activity1 extends AppCompatActivity {
         else if (isEmpty(password)){
             password.setError("password is required");
         }else{
-          Intent inte=new Intent(Activity1.this,Activity3.class);
+          Intent inte=new Intent(com.example.ann.bittwo.login.this,nutrition.class);
           startActivity(inte);
         }
 

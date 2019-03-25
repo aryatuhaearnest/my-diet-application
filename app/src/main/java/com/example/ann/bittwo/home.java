@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.util.Log;
-import android.widget.EditText;
 /*ARYATUHA EARNEST 2017/BIT/066/PS*/
 
 public class home extends AppCompatActivity {
@@ -26,7 +25,7 @@ public static final String my_tag="the custom message ";
         mybutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myintent =new Intent(home.this,Activity1.class);
+                Intent myintent =new Intent(home.this,login.class);
                 startActivity(myintent);
             }
         });
@@ -34,7 +33,7 @@ public static final String my_tag="the custom message ";
         mybutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myintent =new Intent(home.this,Activity2.class);
+                Intent myintent =new Intent(home.this,signup.class);
                 startActivity(myintent);
             }
         });
