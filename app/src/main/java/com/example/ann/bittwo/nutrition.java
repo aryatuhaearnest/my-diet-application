@@ -59,7 +59,8 @@ public class nutrition extends AppCompatActivity {
                     startActivity(myintent2);
                     break;
                 case R.id.nutrition:
-                    Toast.makeText(getApplicationContext(),"service coming soon",Toast.LENGTH_SHORT).show();
+                    Intent myintent3 =new Intent(nutrition.this,Activity1.class);
+                    startActivity(myintent3);
                     break;
                 default:
                     return false;

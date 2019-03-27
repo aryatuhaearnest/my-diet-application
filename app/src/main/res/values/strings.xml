@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">bittwo</string>
+    <string name="app_name">Nutrition</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_exit">Exit</string>
+    <string name="action_home">Home</string>
+    <string name="action_logout">Logout</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_1">Activity1</string>
+    <string name="tab_text_1">CALORIES</string>
+    <string name="tab_text_2">NUTRIENTS</string>
+    <string name="tab_text_3">MACROS</string>
 </resources>

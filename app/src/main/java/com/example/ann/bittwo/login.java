@@ -64,7 +64,7 @@ public class login extends AppCompatActivity {
         else if (isEmpty(password)){
             password.setError("password is required");
         }else{
-          Intent inte=new Intent(com.example.ann.bittwo.login.this,nutrition.class);
+          Intent inte=new Intent(com.example.ann.bittwo.login.this,Activity1.class);
           startActivity(inte);
         }
 

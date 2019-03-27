@@ -76,7 +76,7 @@ public class signup extends AppCompatActivity {
             if (isEmpty(confirm)) {
                 confirm.setError("password needs confirmation");
             }
-            if (!password.equals(confirm)) {
+             if (!password.equals(confirm)) {
                 confirm.setError("Password doesnot match");
             }
             else
