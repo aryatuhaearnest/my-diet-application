@@ -25,7 +25,6 @@ public class signup extends AppCompatActivity {
     private EditText confirm;
     private Button SignUp;
     private FirebaseAuth mAuth;
-
     ProgressDialog progressDialog;
 
 
@@ -64,26 +63,27 @@ public class signup extends AppCompatActivity {
         CharSequence email = text.getText().toString();
         return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches());
     }
-
     void checkDataEntered() {
 
         if (TextUtils.isEmpty(email.getText())) {
             email.setError("Enter valid email");
-
-           if (isEmpty(password)) {
+        }
+           else if (isEmpty(password)) {
                 password.setError("password is required");
             }
-            if (isEmpty(confirm)) {
+
+               else if (isEmpty(confirm)) {
                 confirm.setError("password needs confirmation");
             }
-             if (!password.equals(confirm)) {
+            else if (!password.equals(confirm)) {
                 confirm.setError("Password doesnot match");
             }
             else
+                progressDialog.setTitle("ACTION PERFOMING");
                 progressDialog.show();
 
             {
-                mAuth.createUserWithEmailAndPassword(email.toString(), password.toString())
+                mAuth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString())
                         .addOnCompleteListener(signup.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -108,7 +108,7 @@ public class signup extends AppCompatActivity {
                         });
             }
 
-        }
+
     }
 }
 

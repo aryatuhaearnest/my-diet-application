@@ -4,16 +4,19 @@
     tools:context="com.example.ann.bittwo.Activity1">
     <item
         android:id="@+id/action_settings"
-        android:icon="@drawable/set"
+        android:icon="@drawable/ic_set"
         android:orderInCategory="100"
         android:title="@string/action_settings"
+
         app:showAsAction="never" />
     <item
         android:id="@+id/home"
+        android:icon="@drawable/ho"
         android:orderInCategory="101"
         android:title="Home" />
     <item
         android:id="@+id/logout"
+        android:icon="@drawable/logout"
         android:orderInCategory="102"
         android:title="Logout" />
     <item
@@ -22,6 +25,7 @@
         android:title="Nutrition" />
     <item
         android:id="@+id/exit"
+        android:icon="@drawable/exit"
         android:orderInCategory="104"
         android:title="Exit" />
 </menu>

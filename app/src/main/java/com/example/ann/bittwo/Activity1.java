@@ -20,8 +20,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.widget.TextView;
-
 public class Activity1 extends AppCompatActivity {
 
     /**
@@ -101,6 +99,8 @@ public class Activity1 extends AppCompatActivity {
             return true;
         }
         if (id == R.id.nut) {
+            Intent myintent2 =new Intent(Activity1.this,nutrition.class);
+            startActivity(myintent2);
             return true;
         }
         if (id == R.id.exit) {
@@ -154,7 +154,20 @@ public class Activity1 extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_activity1, container, false);
+
+            View rootView=null;
+            switch(getArguments().getInt(ARG_SECTION_NUMBER)){
+                case 1:
+                    rootView = inflater.inflate(R.layout.fragment_calories, container, false);
+                    break;
+                case 2:
+                    rootView = inflater.inflate(R.layout.fragment_nutrients, container, false);
+                    break;
+                case 3:
+                    rootView = inflater.inflate(R.layout.fragment_macros, container, false);
+                    break;
+            }
+
             return rootView;
         }
     }
