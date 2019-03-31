@@ -158,13 +158,13 @@ public class Activity1 extends AppCompatActivity {
             View rootView=null;
             switch(getArguments().getInt(ARG_SECTION_NUMBER)){
                 case 1:
-                    rootView = inflater.inflate(R.layout.fragment_calories, container, false);
+                    //rootView = inflater.inflate(R.layout.fragment_calories, container, false);
                     break;
                 case 2:
-                    rootView = inflater.inflate(R.layout.fragment_nutrients, container, false);
+                   // rootView = inflater.inflate(R.layout.fragment_nutrients, container, false);
                     break;
                 case 3:
-                    rootView = inflater.inflate(R.layout.fragment_macros, container, false);
+                   // rootView = inflater.inflate(R.layout.fragment_macros, container, false);
                     break;
             }
 

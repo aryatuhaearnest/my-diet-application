@@ -48,7 +48,7 @@ public class signup extends AppCompatActivity {
         SignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkDataEntered();
+                checkDataEntered(email.getText().toString(),password.getText().toString(),confirm.getText().toString());
             }
         });
     }
@@ -63,27 +63,26 @@ public class signup extends AppCompatActivity {
         CharSequence email = text.getText().toString();
         return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches());
     }
-    void checkDataEntered() {
+    void checkDataEntered(String mail,String Passowrd,String conf) {
 
-        if (TextUtils.isEmpty(email.getText())) {
+        if (TextUtils.isEmpty(mail)) {
             email.setError("Enter valid email");
         }
-           else if (isEmpty(password)) {
+           else if (TextUtils.isEmpty(Passowrd)) {
                 password.setError("password is required");
             }
 
-               else if (isEmpty(confirm)) {
+               else if (TextUtils.isEmpty(conf)) {
                 confirm.setError("password needs confirmation");
             }
-            else if (!password.equals(confirm)) {
+            else if (!Passowrd.equals(conf)) {
                 confirm.setError("Password doesnot match");
             }
-            else
+            else{
                 progressDialog.setTitle("ACTION PERFOMING");
                 progressDialog.show();
 
-            {
-                mAuth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString())
+                mAuth.createUserWithEmailAndPassword(mail,Passowrd)
                         .addOnCompleteListener(signup.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {

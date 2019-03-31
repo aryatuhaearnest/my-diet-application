@@ -44,7 +44,7 @@ public class login extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-               checkDataEntered();
+               checkDataEntered(email.getText().toString(),password.getText().toString());
             }
         });
     }
@@ -56,14 +56,15 @@ public class login extends AppCompatActivity {
         CharSequence email = text.getText().toString();
         return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches());
     }
-   void checkDataEntered(){
-
-       if (TextUtils.isEmpty(email.getText())) {
+   void checkDataEntered(String mail,String Passowrd){
+       if (TextUtils.isEmpty(mail)) {
            email.setError("Enter valid email");
        }
-        else if (isEmpty(password)){
-            password.setError("password is required");
-        }else{
+       else if (TextUtils.isEmpty(Passowrd)) {
+           password.setError("password is required");
+       }
+
+       else{
           Intent inte=new Intent(com.example.ann.bittwo.login.this,Activity1.class);
           startActivity(inte);
         }
