@@ -23,7 +23,8 @@
             android:name=".signup"
             android:label="signup"
             android:parentActivityName=".home" />
-        <activity android:name=".nutrition" />
+        <activity android:name=".nutrition"
+            android:label="Nutrients"/>
         <activity
             android:name=".Activity1"
             android:label="@string/title_activity_1"

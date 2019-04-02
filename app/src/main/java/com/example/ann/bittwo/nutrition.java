@@ -28,12 +28,6 @@ ListView listView;
         arrayList.add("mineral salts");
         arrayList.add("water");
         arrayList.add("takeaway");
-        arrayList.add("fats");
-        arrayList.add("proteins");
-        arrayList.add("cabohydrates");
-        arrayList.add("mineral salts");
-        arrayList.add("water");
-        arrayList.add("takeaway");
 
         ArrayAdapter arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,arrayList);
 listView.setAdapter(arrayAdapter);
@@ -41,7 +35,8 @@ listView.setAdapter(arrayAdapter);
 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-Toast.makeText(nutrition.this,"clicked item:"+1+""+arrayList.get(1).toString(),Toast.LENGTH_SHORT).show();
+//Toast.makeText(nutrition.this,"clicked item:"+1+""+arrayList.get(1).toString(),Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext()," "+arrayList.get(position),Toast.LENGTH_SHORT).show();
     }
 });
     }

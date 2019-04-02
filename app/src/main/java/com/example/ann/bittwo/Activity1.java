@@ -3,6 +3,7 @@ package com.example.ann.bittwo;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -41,6 +42,7 @@ public class Activity1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_1);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -61,7 +63,7 @@ public class Activity1 extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "service coming soon", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -110,7 +112,8 @@ public class Activity1 extends AppCompatActivity {
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int x ) {
-                            Activity1.this.finish();
+//                            Activity1.this.finish();
+                            Activity1.super.finish();
                         }
                     })
                     .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -122,6 +125,7 @@ public class Activity1 extends AppCompatActivity {
             AlertDialog alert=builder.create();
             alert.show();
             return true;
+
         }
         return super.onOptionsItemSelected(item);
     }
@@ -158,13 +162,13 @@ public class Activity1 extends AppCompatActivity {
             View rootView=null;
             switch(getArguments().getInt(ARG_SECTION_NUMBER)){
                 case 1:
-                    //rootView = inflater.inflate(R.layout.fragment_calories, container, false);
+                    rootView = inflater.inflate(R.layout.fragment_fragment_food, container, false);
                     break;
                 case 2:
-                   // rootView = inflater.inflate(R.layout.fragment_nutrients, container, false);
+                   rootView = inflater.inflate(R.layout.fragment_fragment_drinks, container, false);
                     break;
                 case 3:
-                   // rootView = inflater.inflate(R.layout.fragment_macros, container, false);
+                   rootView = inflater.inflate(R.layout.fragment_fragment_fruits, container, false);
                     break;
             }
 
