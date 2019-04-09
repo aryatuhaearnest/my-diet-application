@@ -1,5 +1,7 @@
 package com.example.ann.bittwo;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.util.Log;
+import android.widget.Toast;
 /*ARYATUHA EARNEST 2017/BIT/066/PS*/
 
 public class home extends AppCompatActivity {
@@ -58,4 +61,5 @@ public static final String my_tag="the custom message ";
         super.onStop();
         Log.i(my_tag,"onStop");
     }
+
 }

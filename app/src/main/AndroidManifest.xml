@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ann.bittwo">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/food"
@@ -9,6 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".test">
+
+
+        </activity>
         <activity android:name=".home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,12 +28,16 @@
             android:name=".signup"
             android:label="signup"
             android:parentActivityName=".home" />
-        <activity android:name=".nutrition"
-            android:label="Nutrients"/>
+        <activity
+            android:name=".nutrition"
+            android:label="Nutrients" />
+
         <activity
             android:name=".Activity1"
             android:label="@string/title_activity_1"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+
+
     </application>
 
 </manifest>

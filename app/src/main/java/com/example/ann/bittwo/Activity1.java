@@ -127,6 +127,16 @@ public class Activity1 extends AppCompatActivity {
             return true;
 
         }
+        if (id == R.id.nut) {
+            Intent myintent2 =new Intent(Activity1.this,nutrition.class);
+            startActivity(myintent2);
+            return true;
+        }
+        if (id == R.id.test) {
+            Intent myintent2 =new Intent(Activity1.this,test.class);
+            startActivity(myintent2);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
