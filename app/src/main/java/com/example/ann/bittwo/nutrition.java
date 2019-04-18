@@ -23,7 +23,7 @@ public class nutrition extends AppCompatActivity {
 ListView listView;
     Button mybutton;
     TextView textView;
-    EditText editText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,29 +31,13 @@ ListView listView;
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         listView=findViewById(R.id.list);
         mybutton=findViewById(R.id.button6);
-        editText = findViewById(R.id.editText2);
+
 
         mybutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if((editText.getText().toString().isEmpty())){
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("http://www.google.com"));
-                    startActivity(intent);
-                }
-// else if(!(editText.getText().toString().contains("www"))){
-//                    Toast.makeText(nutrition.this, "Enter correct format starting with www", Toast.LENGTH_SHORT).show();
-//
-//                }
-                else{
-                    String url = editText.getText().toString();
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("http://www."+url));
-                    startActivity(intent);
-                }
-
-
-
+                Intent intent=new Intent(nutrition.this,web.class);
+                startActivity(intent);
             }
         });
 

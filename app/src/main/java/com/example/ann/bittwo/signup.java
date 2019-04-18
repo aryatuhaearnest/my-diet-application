@@ -1,6 +1,7 @@
 package com.example.ann.bittwo;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -32,7 +34,7 @@ public class signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
-
+TextView tx=findViewById(R.id.textView7);
         mAuth = FirebaseAuth.getInstance();
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -80,7 +82,9 @@ public class signup extends AppCompatActivity {
             }
             else{
                 progressDialog.setTitle("ACTION PERFOMING");
+            progressDialog.setCancelable(false);
                 progressDialog.show();
+
 
                 mAuth.createUserWithEmailAndPassword(mail,Passowrd)
                         .addOnCompleteListener(signup.this, new OnCompleteListener<AuthResult>() {
@@ -108,6 +112,10 @@ public class signup extends AppCompatActivity {
             }
 
 
+    }
+    public void logg(View view){
+        Intent intent=new Intent(signup.this,login.class);
+        startActivity(intent);
     }
 }
 

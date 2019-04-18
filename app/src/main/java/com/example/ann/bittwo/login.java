@@ -11,6 +11,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,6 +32,8 @@ public class login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+
+        TextView textView=findViewById(R.id.textView9);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         mA = FirebaseAuth.getInstance();
         email = (EditText) findViewById(R.id.editText);
@@ -93,5 +96,9 @@ public class login extends AppCompatActivity {
                         }
                     });
         }
+    }
+    public void cash(View view){
+        Intent intents=new Intent(com.example.ann.bittwo.login.this,signup.class);
+       startActivity(intents);
     }
 }
