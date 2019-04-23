@@ -172,7 +172,7 @@ public class Activity1 extends AppCompatActivity {
             View rootView=null;
             switch(getArguments().getInt(ARG_SECTION_NUMBER)){
                 case 1:
-                    rootView = inflater.inflate(R.layout.fragment_home, container, false);
+                    rootView = inflater.inflate(R.layout.fragment_fragment_food, container, false);
                     break;
                 case 2:
                    rootView = inflater.inflate(R.layout.fragment_fragment_drinks, container, false);
