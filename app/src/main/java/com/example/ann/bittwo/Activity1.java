@@ -63,8 +63,20 @@ public class Activity1 extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "service coming soon", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+               Intent a=new Intent(Intent.ACTION_SEND);
+               final String appPackageName=getApplicationContext().getPackageName();
+               String strAppLink="";
+               try{
+                   strAppLink="http://play.google.com/store/apps/details?id="+appPackageName;
+               }catch (android.content.ActivityNotFoundException anfe){
+                   strAppLink="http://play.google.com/store/apps/details?id="+appPackageName;
+               }
+               a.setType("text/link");
+               String shareBody="hey download app for free" + "\n"+""+strAppLink;
+               String shareSub="My Diet Application";
+               a.putExtra(Intent.EXTRA_SUBJECT,shareSub);
+                a.putExtra(Intent.EXTRA_TEXT,shareBody);
+                startActivity(Intent.createChooser(a,"share Using"));
             }
         });
 
