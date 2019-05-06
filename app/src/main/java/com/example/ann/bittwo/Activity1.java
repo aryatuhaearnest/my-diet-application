@@ -69,10 +69,10 @@ public class Activity1 extends AppCompatActivity {
                try{
                    strAppLink="http://play.google.com/store/apps/details?id="+appPackageName;
                }catch (android.content.ActivityNotFoundException anfe){
-                   strAppLink="http://play.google.com/store/apps/details?id="+appPackageName;
+                   strAppLink="http://play.google.com/store/apps/MyDiet id="+appPackageName;
                }
                a.setType("text/link");
-               String shareBody="hey download app for free" + "\n"+""+strAppLink;
+               String shareBody="Hey !!! download My Diet app for free" + "\n"+""+strAppLink;
                String shareSub="My Diet Application";
                a.putExtra(Intent.EXTRA_SUBJECT,shareSub);
                 a.putExtra(Intent.EXTRA_TEXT,shareBody);
@@ -99,6 +99,8 @@ public class Activity1 extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent myintent =new Intent(Activity1.this,SettingsActivity.class);
+            startActivity(myintent);
             return true;
         }
         if (id == R.id.home) {
@@ -119,7 +121,7 @@ public class Activity1 extends AppCompatActivity {
         }
         if (id == R.id.exit) {
             AlertDialog.Builder builder=new AlertDialog.Builder(this);
-            builder.setMessage("Are you sure you want to exit")
+            builder.setMessage("Are you sure you want to logout")
                     .setCancelable(false)
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
